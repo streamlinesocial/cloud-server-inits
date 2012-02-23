@@ -23,3 +23,8 @@ yum -y install puppet facter ruby-devel rubygems
 rm /etc/yum.repos.d/{puppetlabs,epel}.repo
 
 gem install --no-ri --no-rdoc chef
+
+# skip vagrant setup / key stuff
+
+sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
+
